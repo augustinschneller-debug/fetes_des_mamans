@@ -1,0 +1,144 @@
+:root {
+  --cream: #faf6f0;
+  --blush: #e8c4c8;
+  --rose: #b85c6b;
+  --rose-deep: #8f3d4d;
+  --sage: #5c6b5a;
+  --ink: #2a2428;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+.hearts-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hearts-bg span {
+  position: absolute;
+  color: var(--blush);
+  opacity: 0.35;
+  line-height: 1;
+}
+
+.hearts-bg span:nth-child(1)  { top: 8%;  left: 6%;   font-size: 1.5rem; }
+.hearts-bg span:nth-child(2)  { top: 15%; right: 10%; font-size: 2rem;   opacity: 0.25; }
+.hearts-bg span:nth-child(3)  { top: 28%; left: 12%;  font-size: 1rem;   }
+.hearts-bg span:nth-child(4)  { top: 42%; right: 6%;  font-size: 1.75rem; color: var(--rose); opacity: 0.2; }
+.hearts-bg span:nth-child(5)  { top: 55%; left: 4%;   font-size: 2.25rem; opacity: 0.22; }
+.hearts-bg span:nth-child(6)  { top: 68%; right: 14%; font-size: 1.25rem; }
+.hearts-bg span:nth-child(7)  { top: 78%; left: 18%;  font-size: 1.6rem;  color: var(--rose); opacity: 0.18; }
+.hearts-bg span:nth-child(8)  { top: 22%; left: 78%;  font-size: 1.1rem;  }
+.hearts-bg span:nth-child(9)  { top: 62%; left: 82%;  font-size: 1.9rem;  opacity: 0.28; }
+.hearts-bg span:nth-child(10) { top: 88%; right: 22%; font-size: 1.4rem; }
+.hearts-bg span:nth-child(11) { top: 35%; left: 45%;  font-size: 0.9rem;  opacity: 0.15; }
+.hearts-bg span:nth-child(12) { top: 92%; left: 42%;  font-size: 1.2rem;  color: var(--rose); opacity: 0.2; }
+
+.hero,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1.5rem 1.5rem;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.hero-hearts {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-hearts span {
+  color: var(--rose);
+  font-size: 1.1rem;
+  opacity: 0.7;
+  animation: heart-float 2.5s ease-in-out infinite;
+}
+
+.hero-hearts span:nth-child(2) {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  animation-delay: 0.4s;
+}
+
+.hero-hearts span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes heart-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.hero-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin: 0 0 0.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 3.75rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--rose-deep);
+  margin: 0 0 0.75rem;
+  line-height: 1.1;
+}
+
+.hero-lead {
+  color: var(--sage);
+  margin: 0;
+}
+
+.cadeau {
+  text-align: center;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+.gift-btn {
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #fff;
+  background: var(--rose);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gift-btn:hover {
+  background: var(--rose-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-hearts span {
+    animation: none;
+  }
+}
